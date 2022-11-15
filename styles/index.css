@@ -1,3 +1,9 @@
+
+#nav-bar-list{
+    list-style-type: none;
+}
+
+
 .gallery-img{
     width: 10em;
     height: 7em;
@@ -14,3 +20,4 @@
     width: 60em;
     height: 38em;
 }
+
