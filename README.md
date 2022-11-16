@@ -1,4 +1,5 @@
 # majima-melons
+Miles Leo Amaury
 
 
 # SRS
@@ -73,3 +74,4 @@ Signing up gives users access to special deals and discounts as well as the abil
 ### Saved Orders Page
 - Displays all saved orders
 - Allows a user to checkout using a saved order
+
