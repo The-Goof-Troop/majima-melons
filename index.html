@@ -11,42 +11,38 @@
 </head>
 <body>
     <!-- Nav Bar - Leo -->
-<section >
-<ul class="d-flex justify-content-around">
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            Home
-        </a>
-    </li>
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            menu
-        </a>
-    </li>
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            signup
-        </a>
-    </li>
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            login
-        </a>
-    </li>
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            cart
-        </a>
-    </li>
-    <li id="nav-bar-list">
-        <a href="" id="nav-bar-link">
-            favorites
-        </a>
-    </li>
-</ul>
+
+    <nav class="navbar navbar-expand-lg bg-light mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/majima-melon-gif.gif" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Majima Melons
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Account
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                          <li><a class="dropdown-item" href="#">Login</a></li>
+                          <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <a class="nav-link" href="#">Menu</a>
+                    <a class="nav-link" href="#">Saved Orders</a>                    
+                </div>
+            </div>
+        </div>
+    </nav>
 
 <!-- Gallery - Miles -->
-</section>
+
     
     <section class = "container d-flex justify-content-center mb-5" id = "gallery">
         <div>
@@ -58,10 +54,14 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="5000">
                             <img src="./images/gallery/meal1.png" class="d-block gallery-img-c" >
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="./images/majima-melon-gif.gif" class="d-block gallery-img-c" >
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
                             <img src="./images/gallery/meal10.png" class="d-block gallery-img-c" >
@@ -100,18 +100,21 @@
         
     </section>
     <!-- Company Background - Mario -->
-    <h3 class=" border-5 border-bottom border-dark w-auto text-center">The History Of The Melon</h3>
-    <div class="d-flex align-self-center p-5 text-dark rounded-3">
-        <img src="./images/majima-melon-logo.JPG" alt="majima melon" class="w-25">
-        <p class="m-auto p-5 text-center">It all started in a small shop in Osaka, Japan. Our current and only, C.E.O Majima Goro was the founding father of the great Company, Majima Melons. Over the years, he has showed people the great and amazing watermelon dishes he, himself has created with massive brain and creativity. As more and more people were exposed to the greatnest of watermelons. the shop expanded and reached out into other parts of Japan.</p>
-        <img src="./images/majima-cooking.PNG" alt="majima cooking" class="w-25">
-    </div>
+    <section class = "bg-light border m-5">
+        <h3 class="w-auto text-center mt-3">The History Of The Melon</h3>
+        <div class="d-flex align-self-center p-5 text-dark rounded-3">
+            <img src="./images/majima-melon-logo.JPG" alt="majima melon" class="w-25">
+            <p class="m-auto p-5 text-center">It all started in a small shop in Osaka, Japan. Our current and only, C.E.O Goro Majima, was the founding father of the great Company, Majima Melons. Over the years, he has showed people the great and amazing watermelon dishes he, himself has created with his massive brain and creativity. As more and more people were exposed to the greatness of watermelons, the shop expanded and reached out into other parts of Japan.</p>
+            <img src="./images/majima-cooking.PNG" alt="majima cooking" class="w-25">
+        </div>
+    </section>
+    
 
     <!-- Footer - Leo -->
-    <section>
-        <p>
+    <footer class = "bg-light border">
+        <p class = "text-center p-1 pt-3 align-self-center">
             &copy; Majima Melons 2022
         </p>
-    </section>
+    </footer>
 </body>
 </html>
