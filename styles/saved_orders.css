@@ -1,0 +1,16 @@
+body{
+    background-image: url("../images/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#nav-bar-list{
+    list-style-type: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}
