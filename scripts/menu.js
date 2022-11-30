@@ -25,17 +25,50 @@ function addToOrder(button, item){
         //container
         container = document.createElement("div")
         container.id = id
+        container.classList.add("row");
         //inner span
         text = document.createElement("span")
-        text.innerText = `${item} x `
+        ptext = document.createElement("p")
+        ptext.innerText = `${item} x `
+
+        
+        text.classList.add("col");
+        text.classList.add("w-50")
+        text.classList.add("flex-fill")
+        text.classList.add("justify-content-center")
+
+        
+        ptext.classList.add("mb-0")
+        ptext.style.paddingTop=".3em"
+
+       
         //num span
         num = document.createElement("span")
         num.innerText = "1"
         num.id = id+"-num"
-        text.appendChild(num)
+        ptext.appendChild(num)
+        text.appendChild(ptext)
+        //btn to remove
+        btnSpan=document.createElement("span")
+        btnSpan.classList.add("col")
+         btnSpan.classList.add("w-50")
+        btnSpan.classList.add("d-flex")
+
+        remove = document.createElement("button")
+        remove.addEventListener("click", removeItem(remove))
+        remove.value=id
+        remove.classList.add("btn");
+        remove.classList.add("btn-danger");
+        remove.classList.add("ms-3");
+        remove.classList.add("mb-3");
+        
+        remove.innerText= "-1"
+
+        btnSpan.appendChild(remove)
 
         container.appendChild(text)
         
+        container.appendChild(btnSpan)
         order.appendChild(container)
     }
 
@@ -43,6 +76,10 @@ function addToOrder(button, item){
     price = button.innerText.substring(1)    
     total += Number(price)
     totalElement.innerText = total.toFixed(2)
+}
+
+function removeItem(btn){
+
 }
 
 items = [
