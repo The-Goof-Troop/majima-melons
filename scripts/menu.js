@@ -33,12 +33,13 @@ function addToOrder(button, item){
 
         
         text.classList.add("col");
-        text.classList.add("w-50")
+        text.classList.add("w-25")
         text.classList.add("flex-fill")
         text.classList.add("justify-content-center")
 
         
         ptext.classList.add("mb-0")
+        ptext.classList.add("text-end")
         ptext.style.paddingTop=".3em"
 
        
@@ -51,12 +52,13 @@ function addToOrder(button, item){
         //btn to remove
         btnSpan=document.createElement("span")
         btnSpan.classList.add("col")
-         btnSpan.classList.add("w-50")
+        btnSpan.classList.add("w-50")
         btnSpan.classList.add("d-flex")
 
         remove = document.createElement("button")
-        remove.addEventListener("click", removeItem(remove))
+        remove.onclick = function(){removeItem(remove)}
         remove.value=id
+        remove.id = button.innerText.substring(1)
         remove.classList.add("btn");
         remove.classList.add("btn-danger");
         remove.classList.add("ms-3");
@@ -79,7 +81,28 @@ function addToOrder(button, item){
 }
 
 function removeItem(btn){
-
+    if(document.getElementById(btn.value)){
+        //if the ID exists
+        item = document.getElementById(btn.value)
+        price = btn.id
+        numberLeft = Number(document.getElementById(btn.value + "-num").innerText)
+        
+        if(numberLeft > 1){
+            //more than one left
+            //lessen number in order by 1
+            numberLeft-=1
+            document.getElementById(btn.value + "-num").innerText = numberLeft
+            //remove cost
+            total -= Number(price)
+            totalElement.innerText = total.toFixed(2)
+        }else{
+            //remove cost
+            total -= Number(price)
+            totalElement.innerText = total.toFixed(2)
+            //remove from page
+            document.getElementById(btn.value).remove()
+        }
+    }
 }
 
 items = [
