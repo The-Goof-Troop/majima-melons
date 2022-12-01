@@ -1,39 +1,45 @@
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
+
+function validate(){
+    let email = document.getElementById("email").value
+    let username = document.getElementById("username").value;
+    let password1 = document.getElementById("password1").value;
+    let password2 = document.getElementById("password2").value;
+    let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(email=="")
+		{
+			alert("Please enter your user email");
+		}
+    else if (!filter.test(email))
+		{
+			alert("Invalid email");
         }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
+    else if ( username == "")
+    {
+        alert("Please Enter a Username")
+}
+    else if (password1 == "")
+    {
+        alert("Please enter password")
     }
-    return "";
-}
-
-function signUp(){
-    //get all the data from the form
-    email = document.getElementById("email").value
-    username = document.getElementById("username").value
-    if(document.getElementById("password1").value === document.getElementById("password2").value)
-        password = document.getElementById("password1").value    
+     else if(password2 == "")
+     {
+        alert("Please confirm password")
+    }
+     else if(document.getElementById("password1").value.length > 0 && document.getElementById("password1").value.length < 8)
+     {
+        alert("Password must be more then 8 characters")
+    }
+     else if(document.getElementById("password1").value.length > 24)
+     {
+        alert("Password must be less then 24 characters")
+    }
+     else if(document.getElementById("password2").value != document.getElementById("password1").value)
+    {
+        alert("Passwords do not match")
+    }
     else
-        return
-    
-    if(!validateEmail(email))
-        return
-
-    console.log(`${email}\n${username}\n${password}`)
-}
-
-function validateEmail(mail) 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
-  {
-    return (true)
-  }
-    return (false)
+    {
+        alert("You Have Made An Account")
+    }
+    ;
 }
