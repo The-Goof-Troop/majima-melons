@@ -40,6 +40,7 @@ function validate(){
     else
     {
         alert("You Have Made An Account")
+        window.location.assign("../index.html")
     }
     ;
 }
