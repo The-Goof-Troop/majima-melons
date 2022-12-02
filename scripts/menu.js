@@ -4,13 +4,38 @@ function pButton(price, item){
     return button
 }
 
+function removeItem(id,price){
+    if(document.getElementById(id)){
+        //if the ID exists
+        item = document.getElementById(id)
+        numberLeft = Number(document.getElementById(id + "-num").innerText)
+        
+        if(numberLeft > 1){
+            //more than one left
+            //lessen number in order by 1
+            numberLeft-=1
+            document.getElementById(id + "-num").innerText = numberLeft
+            //remove cost
+            total -= Number(price)
+            totalElement.innerText = total.toFixed(2)
+        }else{
+            //remove cost
+            total -= Number(price)
+            totalElement.innerText = total.toFixed(2)
+            //remove from page
+            document.getElementById(id).remove()
+        }
+        isZero()
+    }
+}
+
 function addToOrder(button, item){
     order = document.getElementById("order")
     totalElement = document.getElementById("total")
 
     //create unique item id
     id = item.replaceAll(' ',"-")
-    
+    price = button.innerText.substring(1) 
     //search if id exists on the page
     if(document.getElementById(id)){
         //item exists
@@ -56,9 +81,9 @@ function addToOrder(button, item){
         btnSpan.classList.add("d-flex")
 
         remove = document.createElement("button")
-        remove.onclick = function(){removeItem(remove)}
-        remove.value=id
-        remove.id = button.innerText.substring(1)
+        remove.id = `remove-${id}`
+        
+        
         remove.classList.add("btn");
         remove.classList.add("btn-danger");
         remove.classList.add("ms-3");
@@ -67,43 +92,38 @@ function addToOrder(button, item){
         remove.innerText= "-1"
 
         btnSpan.appendChild(remove)
-
+        
         container.appendChild(text)
         
         container.appendChild(btnSpan)
         order.appendChild(container)
+
+        //IIFE Work Around
+        document.getElementById(`remove-${id}`).onclick = (function (copyId, copyPrice) {
+            return () => {
+                removeItem(copyId, copyPrice)
+            };
+          })(id,price);
     }
 
 
-    price = button.innerText.substring(1)    
+       
     total += Number(price)
     totalElement.innerText = total.toFixed(2)
+    isZero()
 }
 
-function removeItem(btn){
-    if(document.getElementById(btn.value)){
-        //if the ID exists
-        item = document.getElementById(btn.value)
-        price = btn.id
-        numberLeft = Number(document.getElementById(btn.value + "-num").innerText)
-        
-        if(numberLeft > 1){
-            //more than one left
-            //lessen number in order by 1
-            numberLeft-=1
-            document.getElementById(btn.value + "-num").innerText = numberLeft
-            //remove cost
-            total -= Number(price)
-            totalElement.innerText = total.toFixed(2)
-        }else{
-            //remove cost
-            total -= Number(price)
-            totalElement.innerText = total.toFixed(2)
-            //remove from page
-            document.getElementById(btn.value).remove()
-        }
+function isZero()
+{
+    totalElement = document.getElementById("total")
+    if(total < 1 && total > -1){
+        total = 0.00
+        totalElement.innerText = total.toFixed(2)
     }
+        
+
 }
+
 
 items = [
     ["Watermelon Parfait", pButton("$9.99", "Watermelon Parfait")],
