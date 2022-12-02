@@ -119,9 +119,7 @@ function isZero()
     if(total < 1 && total > -1){
         total = 0.00
         totalElement.innerText = total.toFixed(2)
-    }
-        
-
+    }   
 }
 
 
