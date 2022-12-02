@@ -25,9 +25,9 @@ function validate(){
      {
         alert("Please confirm password")
     }
-     else if(document.getElementById("password1").value.length > 0 && document.getElementById("password1").value.length < 8)
+     else if(document.getElementById("password1").value.length > 0 && document.getElementById("password1").value.length < 7)
      {
-        alert("Password must be more then 8 characters")
+        alert("Password must be 8 or more characters")
     }
      else if(document.getElementById("password1").value.length > 24)
      {
