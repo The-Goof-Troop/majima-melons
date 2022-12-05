@@ -1,6 +1,6 @@
 total = 0
 function pButton(price, item){
-    button = `<button onclick="addToOrder(this, '${item}')" style="width: 5em;">${price}</button>`
+    button = `<button onclick="addToOrder(this, '${item}')" style="width: 5em;" >${price}</button>`
     return button
 }
 
@@ -124,32 +124,33 @@ function isZero()
 
 
 items = [
-    ["Watermelon Parfait", pButton("$9.99", "Watermelon Parfait")],
-    ["Melon Za", pButton("$14.99", "Melon Za")],
-    ["Melon Za (Pineapple Variant)", pButton("$16.99", "Melon Za (Pineapple Variant)")],
-    ["Melon Sandwhich", pButton("$12.99", "Melon Sandwhich")],
-    ["Assorted Melons", pButton("$2.99", "Assorted Melons")],
-    ["Melon de Grill", pButton("$8.99", "Melon de Grill")],
-    ["Melon Skewer", pButton("$6.99", "Melon Skewer")],
-    ["Melon Salit", pButton("$9.99", "Melon Salit")],
-    ["Melon Salit (Shrimp Variant)", pButton("$14.99", "Melon Salit (Shrimp Variant)")],
-    ["Watermato", pButton("$9.99", "Watermato")],
-    ["Melon con Pollo", pButton("$11.99", "Melon con Pollo")],
-    ["Watermelon and Cherries", pButton("$3.99", "Watermelon and Cherries")],
-    ["Watermelon", pButton("$1.99", "Watermelon")],
-    ["Chilled Melon", pButton("$2.99", "Chilled Melon")],
-    ["Hot Melon", pButton("$2.99", "Hot Melon")],
-    ["Melon Sherbert", pButton("$4.99", "Melon Sherbert")],
-    ["Melon Iceberg", pButton("$12.99", "Melon Iceberg")],
-    ["Melon Smoothie", pButton("$3.99", "Melon Smoothie")],
-    ["Water Smootie", pButton("$1.99", "Water Smootie")],
-    ["Melon Water",pButton("$2.99", "Melon Water")]
+    ["Watermelon Parfait", pButton("$9.99", "Watermelon Parfait"),450],
+    ["Melon Za", pButton("$14.99", "Melon Za"), "200 per slice"],
+    ["Melon Za (Pineapple Variant)", pButton("$16.99", "Melon Za (Pineapple Variant)"),"240 per slice"],
+    ["Melon Sandwhich", pButton("$12.99", "Melon Sandwhich"), 180],
+    ["Assorted Melons", pButton("$2.99", "Assorted Melons"), 425],
+    ["Melon de Grill", pButton("$8.99", "Melon de Grill"), 90],
+    ["Melon Skewer", pButton("$6.99", "Melon Skewer"),120],
+    ["Melon Salit", pButton("$9.99", "Melon Salit"), 200],
+    ["Melon Salit (Shrimp Variant)", pButton("$14.99", "Melon Salit (Shrimp Variant)"), 340],
+    ["Watermato", pButton("$9.99", "Watermato"), 80],
+    ["Melon con Pollo", pButton("$11.99", "Melon con Pollo"), 400],
+    ["Watermelon and Cherries", pButton("$3.99", "Watermelon and Cherries"), 100],
+    ["Watermelon", pButton("$1.99", "Watermelon"), 85],
+    ["Chilled Melon", pButton("$2.99", "Chilled Melon"), 85],
+    ["Hot Melon", pButton("$2.99", "Hot Melon"), 85],
+    ["Melon Sherbert", pButton("$4.99", "Melon Sherbert"), 220],
+    ["Melon Iceberg", pButton("$12.99", "Melon Iceberg"), 85],
+    ["Melon Smoothie", pButton("$3.99", "Melon Smoothie"), 95],
+    ["Water Smootie", pButton("$1.99", "Water Smootie"), 0],
+    ["Melon Water",pButton("$2.99", "Melon Water"), 10]
 ]
 
 let table = new DataTable('#menu_table', {
     data: items,
     columns: [
         {title: "Item"},
-        {title: "Price"}
+        {title: "Price"},
+        {title: "Calories"}
     ]
 });
