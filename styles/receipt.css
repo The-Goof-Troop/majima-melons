@@ -14,3 +14,27 @@ footer {
     width: 100%;
     margin: 0 auto;
 }
+
+.list{
+    list-style-type: none;
+    text-align:left;
+    margin-top:15px;
+    margin-bottom:15px
+}
+
+.bottom{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+    
+}
+
+.home{
+    text-decoration: none;
+    color:black
+}
+.home:hover{
+    color:black
+}
+
