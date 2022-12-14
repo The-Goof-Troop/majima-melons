@@ -5,7 +5,12 @@ if ( username == "user" && password == "password"){
 alert ("Login successfully");
 location.assign("https://the-goof-troop.github.io/majima-melons/index.html")
 }
-if (username != "user" && password != "password"){
-    alert ("wrong credentials");
+if ( username == "manager" && password == "manager_password"){
+    alert ("Login successfully");
+    location.assign("http://127.0.0.1:5500/pages/manager.html")
+    }
+    else{
+        alert ("wrong credentials");
+    }
 }
-}
+
